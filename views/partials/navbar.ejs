@@ -1,0 +1,22 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">&nbsp; <img style="height: 30px;" src='diary.png'>  BlogPost</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles/<%= username %>">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/articles/new">New Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Homepage</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <a class="btn btn-danger" href="/logout">Sign Out</a>
+    </span>
+  </div>
+</nav>

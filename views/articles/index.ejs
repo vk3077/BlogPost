@@ -1,0 +1,25 @@
+<%- include("../partials/header") -%>
+<%- include("../partials/navbar") -%>
+<div class="container">
+    <div class="container">
+      <h1 class="mb-4 mt-4">Blog Articles</h1>
+      <!-- <a href="/articles/new" class="btn btn-success">New Article</a> -->
+
+      <% articles.forEach(article => { %>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h4 class="card-title"><%= article.title %></h4>
+            <div class="card-subtitle text-muted mb-2">
+              <%= article.createdAt.toLocaleDateString() %>
+            </div>
+            <div class="card-text mb-2">
+              <%= article.description.length >170? article.description.substr(0,170) + "..."  : article.description %>
+              <br>
+              <a href="/articles/<%=article.username%>/<%= article.id%>">Read More</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+<%- include("../partials/footer") -%>

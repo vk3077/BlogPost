@@ -1,0 +1,11 @@
+<%- include("../partials/header") -%>
+<%- include("../partials/navbar") -%>
+  <div class="container">
+    <h1 class="mb-4, mt-2">New Article</h1>
+    <form action="/articles/save" method="post">
+    <%- include('../articles/_form_fields') %>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+<%- include("../partials/footer") -%>

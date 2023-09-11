@@ -1,0 +1,31 @@
+<%- include("../partials/header") -%>
+<%- include("../partials/navbar") -%>
+  <div class="container">
+    <div class="container">
+      <h1 class="mb-4 mt-4">Your Posts</h1>
+      <a href="/articles/new" class="btn btn-success">New Article</a>
+
+      <% articles.forEach(article => { %>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h4 class="card-title"><%= article.title %> </h4>
+            <form class="icon-form" action="/articles/<%=article.id%>?_method=DELETE" method="post">
+              <button class="icon-button" type="submit"><i class="far fa-trash-alt card-title icons"></i></button>
+            </form>
+            <form class="icon-form" action="/articles/<%=article.username%>/edit/<%= article.id %>" method="get">
+              <button class="icon-button" type="submit"><i class="far fa-edit card-title icons"></i></button>
+            </form>
+            <div class="card-subtitle text-muted mb-2">
+              <%= article.createdAt.toLocaleDateString() %>
+            </div>
+            <div class="card-text mb-2">
+              <%= article.description.length >170? article.description.substr(0,170) + "..."  : article.description %>
+              <br>
+              <a href="/articles/<%=article.username%>/<%= article.id%>">Read Full Article</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+<%- include("../partials/footer") -%>

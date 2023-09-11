@@ -1,0 +1,21 @@
+<%- include("../partials/header") -%>
+<%- include("../partials/navbar") -%>
+  <div class="container">
+    <h1 class="mb-1 mt-2"><%= article.title %></h1>
+    <div class="mb-2 " style="text-align: center; color: white;">
+      <%= article.createdAt.toLocaleDateString() %>
+    </div>
+
+    <div class="show-article container mb-4" style="min-height: 35rem; max-height: fit-content; border-radius: 15px;">
+      <div class="mt-4 " style="padding: 10px;">
+      <form class="icon-form" action="/articles/<%=article.id%>?_method=DELETE" method="post">
+        <button class="icon-button" type="submit"><i class="far fa-trash-alt card-title icons"></i></button>
+      </form>
+      <form class="icon-form" action="/articles/<%=article.username%>/edit/<%= article.id %>" method="get">
+        <button class="icon-button" type="submit"><i class="far fa-edit card-title icons"></i></button>
+      </form>
+        <%- article.sanitizedHtml %>
+      </div>
+      </div>
+  </div>
+<%- include("../partials/footer") -%>
